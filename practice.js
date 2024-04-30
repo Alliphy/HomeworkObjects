@@ -205,15 +205,18 @@ function makeCard(cardNumber, expirationDate, securityCode) {
   Delete the property password and return the object.
 */
 
-//Code Here
+// Code Here
 
-// function removePassword(password) {
-//   if () {
-//     delete password["..."];
-//   }
+function removePassword(obj) {
+  for (const key of Object.keys(obj)) {
+   if (key === 'password') {
+    delete obj[key]
+   }
+  }
+  // delete obj.password;
 
-//   return password;
-// }
+  return obj;
+}
 
 
 
@@ -234,7 +237,6 @@ const deleteTheBigNumbers = {
 
 //Code Here
 console.log(deleteTheBigNumbers);
-
 
   for (const keys in deleteTheBigNumbers) {
 
