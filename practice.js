@@ -270,6 +270,8 @@ const carDetails = {
 
 //Code Here
 
+const {color, make, model, year} = carDetails;
+
 /// ////////////// PROBLEM 12 ///////////////////
 
 /*
@@ -280,6 +282,7 @@ const carDetails = {
 
 function greeting(obj) {
   //Code Here
+  const {firstName, lastName, title} = obj;
 
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -298,6 +301,11 @@ function greeting(obj) {
 
 //Code Here
 
+function totalPopulation ({utah, california, texas, arizona}) {
+  return utah + california + texas + arizona;
+
+}
+
 /// ////////////// PROBLEM 14 ///////////////////
 
 /*
@@ -309,6 +317,15 @@ function greeting(obj) {
 */
 
 //Code Here
+
+function usCanadaBorder([latitude, longitude]) {
+  if (latitude === 49 && longitude >= -123 && longitude <= -95) {
+    return true;
+  } else {
+    return false;
+  }
+  
+}
 
 /// ////////////// PROBLEM 15 ///////////////////
 
@@ -356,6 +373,29 @@ const employees = [
 
 //Code Here
 
+function employeeUpdater() {
+  const arr = [...employees];
+
+  for (let i = 0; i < arr.length; i++) {
+
+  const employee = arr[i];
+
+  // console.log(employee.firstName);
+
+  if (employee.firstName === "Theo") {
+// delete employee
+    arr.splice(i , 1);
+
+  } else if (employee.firstName === "Lorie") {
+  // update employee to HR
+    employee.department = "HR";
+  }
+  // console.log(arr);
+
+}
+return arr;
+}
+
 /// ////////////// PROBLEM 16 ///////////////////
 
 // Do not edit the code below.
@@ -384,6 +424,8 @@ const cat = {
 let grumpyActivity;
 let fluffy2ndFriend;
 
+fluffy2ndFriend = cat.catFriends[1].name;
+grumpyActivity = cat.catFriends[0].activities[1];
 /// ////////////// PROBLEM 17 ///////////////////
 
 // Do not edit the code below.
@@ -422,6 +464,12 @@ const myCar = {
 
 //Code Here
 
+function recordCleaner() {
+  for (const accident of myCar.accidents){
+    accident.atFaultForAccident = false;
+  }
+}
+
 /// ////////////// PROBLEM 18 ///////////////////
 
 /*
@@ -440,6 +488,12 @@ const myCar = {
 
 //Code Here
 
+function largeNumbers ({first, second, third}) {
+  const lowestNumber = Math.min (first, second, third);
+  return lowestNumber;
+}
+
+
 /// ////////////// PROBLEM 19 ///////////////////
 
 /*
@@ -449,3 +503,14 @@ const myCar = {
 */
 
 //Code Here
+
+function numberGroups ({a, b, c}) {
+  let longestArray;
+  const longestLength = Math.max (a.length, b.length, c.length);
+  for (const x of [a,b,c]) {
+    if (x.length === longestLength) {
+      longestArray = x;
+    }
+  }
+  return longestArray;
+}
